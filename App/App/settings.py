@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'pages', 
-    'blog'
+    'blog',
+    'cars',
+    'carmanager'
 ]
 
 MIDDLEWARE = [
@@ -77,8 +79,11 @@ WSGI_APPLICATION = 'App.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql', 
+        'NAME': "RentCar",
+        'USER':'master1',
+        'PASSWORD': '1',
+        'HOST': 'localhost'
     }
 }
 
@@ -124,3 +129,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "app/static")
 ]
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+MEDIA_URL = '/media/'
