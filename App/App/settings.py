@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'App.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': "RentCar",
-        'USER':'master1',
-        'PASSWORD': '1',
+        'NAME': "RentCar_0",
+        'USER':'master0',
+        'PASSWORD': '0',
         'HOST': 'localhost'
     }
 }
