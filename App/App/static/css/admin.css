@@ -43,6 +43,57 @@ a.button{
     color: black;
     font-size: 16px;    
 }
-.object-tools a.addlink{
+#grp-admin-title{
+    display: none;
+}
+#grp-content{
+    padding: 140px 20px 120px!important
+}
+#grp-navigation h1{
+    padding: 50px 20px 4px 0px;
+    font-size: 25px;
+}
+.grp-section{
+
+}
+
+a:link, a:visited, a {
+    color: #007bff;
+}
+.grp-module h2 a{
+    color: #25282e;
+}
+#grp-navigation a {
+    color: #007bff;
+}
+.grp-fixed-footer{
+    background-image: linear-gradient(#b1aea9,#afabab);
     
+}
+.grp-fixed-footer{
+    font-size: 15px;
+    padding: 24px 20px 20px;    
+}
+#id_model{
+    font-size: 14px;
+}
+input, select{
+    font-size: 13px!important;
+}
+.c-1 label, .grp-button, input.grp-button{
+    font-size: 15px!important;
+    font-weight: bold;
+}
+.vTextField, .vIntegerField, #id_fuel_count{
+    font-size: 13px!important;
+}
+.file-upload {
+    font-size: 13px!important;
+    }
+ul, #grp-user-tools{
+    font-size: 110%;
+}
+.grp-submit-row.grp-fixed-footer>ul>li {    
+    padding: 2px !important;
+    background: #716e6e;
 }

@@ -1587,3 +1587,14 @@ h1, h2, h3, h4, h5,
 .innerpage{
   background-image: url('../images/hero_2.jpg')
 }
+.carlist{
+  width: 100%;
+  height: 200px;
+}
+.owl-nav{
+  display: none;
+}
+
+.blog-content .carlist{
+  height: 400px;
+}

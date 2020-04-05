@@ -1,0 +1,48 @@
+#header{
+    background-color: #000;
+    color: #fff;
+    height: 46px;
+}
+#branding h1{
+    color: #fff;
+    font-size: 3rem;
+}
+a:link,
+a:visited{
+    color: blue;
+}
+div.breadcrumbs{
+    background-color: grey;
+    color: black;
+    font-weight: bold;
+    
+}
+div.breadcrumbs a{
+    background-color: #fff;
+    padding: 5px;
+    color: black;
+    font-weight: bold;
+}
+.module h2, 
+.module caption
+ {
+    background-color: blueviolet;
+}
+.button .button[type="submit"],
+input[type='button'],
+.submit-row input,
+a.button{
+    background-color: grey;
+    color: white
+}
+#changelist-filter{
+    box-shadow: 1px 1px 3px 3px grey;
+}
+#changelist-filter h3{
+    font-weight: bold;
+    color: black;
+    font-size: 16px;    
+}
+.object-tools a.addlink{
+    
+}
