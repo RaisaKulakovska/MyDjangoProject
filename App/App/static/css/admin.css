@@ -26,7 +26,7 @@ div.breadcrumbs a{
 .module h2, 
 .module caption
  {
-    background-color: blueviolet;
+    background-color: #4ab3e7;;
 }
 .button .button[type="submit"],
 input[type='button'],
@@ -96,4 +96,16 @@ ul, #grp-user-tools{
 .grp-submit-row.grp-fixed-footer>ul>li {    
     padding: 2px !important;
     background: #716e6e;
+}
+input[name="_save"]{
+    background-image: linear-gradient(#4ebf48,#2f9023)
+}
+.grp-object-tools li a{
+    background: linear-gradient(#e9e5e5,#b5afaf);
+}
+.grp-object-tools a.grp-add-link {
+    background: url(../images/icons-s79f97b581c.png) 0 -891px no-repeat,linear-gradient(#e3f2f5,#93c9f7);
+}
+a.grp-add-link{
+    color: #252525;
 }
