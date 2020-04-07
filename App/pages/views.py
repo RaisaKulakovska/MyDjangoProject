@@ -34,3 +34,6 @@ def services(request):
 def contact(request):
     data = {'title': "Contact Us"}
     return render(request, 'pages/contact.html', data)
+
+# def search(request):
+#     return render(request, 'pages/search.html')
