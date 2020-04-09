@@ -6,7 +6,7 @@ from .models import CarsList
 from carmanager.models import CarManager
 
 
-def index(request):
+def index_carlist(request):
     carlist = CarsList.objects.all().filter(is_published=True)
 
     paginator = Paginator(carlist, 6)

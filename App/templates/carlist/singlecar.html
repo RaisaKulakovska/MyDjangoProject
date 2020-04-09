@@ -14,15 +14,19 @@
                     <div class="col-md-4">
                         <div class="sidebar-box">
                             <img src="{{ singlemanager.photo.url }}" alt="Free Website Template by Free-Template.co" class="img-fluid mb-4 w-50 rounded-circle">
-                            <h3 class="text-black">About The Author</h3>
-                            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
-                            <p><a href="#" class="btn btn-primary btn-md text-white">Read More</a></p>
+                            <h3 class="text-black">Position: {{singlemanager.position}}</h3>
+                            <p>{{singlemanager.description}}</p>
+                            <p><span class="field_name">Mobile phone: </span>{{singlemanager.phone1}}</p>
+                            <p><span class="field_name">Work phone: </span>{{singlemanager.phone1}}</p>
+                            <p><span class="field_name">Home phone: </span>{{singlemanager.phone1}}</p>
+                            <p><span class="field_name">Telegram: </span>{{singlemanager.telegram}}</p>
+                            <p><a href="#" class="btn btn-primary btn-md text-white">Contact</a></p>
                         </div>
                     </div>
                     <div class="col-md-8 mb-4">
                         <div class="item-1">
                             <a href="#"><img src="{{ car.photo_main.url }}" alt="{{car.model}}"
-                                    class="carlist mx-auto d-block"></a>
+                                    class="carlist carlist-single mx-auto d-block"></a>
                             <div class="item-1-contents">
                                 <div class="text-center">
                                     <h3><a href="#">{{car.vendor}} {{car.model}}</a></h3>
@@ -68,13 +72,64 @@
                                 <div class="d-flex action">
                                     <a href="{% url 'contact' %}" class="btn btn-primary">Rent Now</a>
                                 </div>
-                                <div class="d-flex action">
-                                    <a href="{% url 'contact' %}" class="btn btn-primary">Test</a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>               
             </div>
+            <div class="row">
+                <div class="col-lg-3">
+                  <h4>Our Offer: </h4>
+                  <h3>{{ car.vendor }} {{ car.model }}</h3>
+                  <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure nesciunt nemo vel earum maxime
+                    neque!</p>
+                  <p>
+                    <a href="#" class="btn btn-primary custom-prev">Previous</a>
+                    <span class="mx-2">/</span>
+                    <a href="#" class="btn btn-primary custom-next">Next</a>
+                  </p>
+                </div>
+                <div class="col-lg-9">
+                  <div class="nonloop-block-13 owl-carousel">
+                    {% if car %}                    
+                    <div class="item-1">
+                      <img src="{{ car.photo_main.url }}" alt="{{ car.model }}" class="img-fluid carlist">
+                      
+                    </div> 
+                    <div class="item-1">
+                        <img src="{{ car.photo_1.url }}" alt="{{ car.model }}" class="img-fluid carlist">
+                        
+                      </div>
+                      <div class="item-1">
+                        <img src="{{ car.photo_2.url }}" alt="{{ car.model }}" class="img-fluid carlist">
+                        
+                      </div>     
+                      <div class="item-1">
+                        <img src="{{ car.photo_3.url }}" alt="{{ car.model }}" class="img-fluid carlist">
+                                                                                     
+                    {% else %}
+                    <div class="col-md-12">
+                      <p>No Cars Avialable</p>
+                    </div>
+                    {% endif %}
+                  </div>
+                </div>
+                <div class="">
+                    <div class=" row justify-content-center mt-3 rating">
+                        <span class="icon-star text-warning"></span>
+                        <span class="icon-star text-warning"></span>
+                        <span class="icon-star text-warning"></span>
+                        <span class="icon-star text-warning"></span>
+                        <span class="icon-star text-warning"></span>
+                      </div>  
+                    
+                    <div class=" row justify-content-center mt-3 action">
+                        <a href="contact.html" class="btn btn-primary">Rent Now</a>
+                      </div> 
+                  </div>                                 
+                    
+                </div>
+              </div>
         </div>
     </div>
  </div>

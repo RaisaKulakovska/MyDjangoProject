@@ -12,6 +12,7 @@ class CarManager(models.Model):
     email = models.CharField(max_length=200)   
     hire_date = models.DateTimeField(default=datetime.now,blank=True)
     position = models.CharField(max_length=100)
+    description = models.CharField(max_length=1500)
     telegram = models.CharField(max_length=100)
     is_published = models.BooleanField(default=True)
     def __str__(self):
