@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'pages', 
     'blog',
     'cars',
-    'carmanager'
+    'carmanager',
+    'accounts'
 ]
 
 MIDDLEWARE = [
