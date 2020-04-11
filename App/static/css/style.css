@@ -1591,10 +1591,7 @@ html {
   .innerpage{
     background-image: url('../images/hero_2.jpg')
   }
-  .carlist{
-    width: 100%;
-    height: 200px;
-  }
+  
   .owl-nav{
     display: none;
   }
