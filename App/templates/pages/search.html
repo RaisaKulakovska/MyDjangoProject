@@ -21,9 +21,12 @@
                                 <select class="form-control" name="vendor" id="exampleFormControlSelect1">
                                     <option value disabled selected>Vendor</option>
                                     {% for vendor in vendor_list %} 
-                                    <option {% if vendor == request_value.vendor %} selected {% endif %}> {{ vendor }} </option>
+                                    <option {% if vendor == request_value.vendor %} selected 
+                                        {% endif %}> {{ vendor }} </option>
                                     {% endfor  %}
                                 </select>
+                            </div>
+                            <div class="form-group col-md-3">
                                 <label for="cf-1">Model</label>
                                 <select class="form-control" name="model" id="exampleFormControlSelect1">
                                     <option value disabled selected>Model</option>
@@ -31,6 +34,8 @@
                                     <option {% if model == request_value.model %} selected {% endif %}> {{ model }} </option>
                                     {% endfor  %}
                                 </select>
+                            </div>
+                            <div class="form-group col-md-3">
                                 <label for="cf-1">Engine</label>
                                 <select class="form-control" name="engine" id="exampleFormControlSelect1">
                                     <option value disabled selected>Engine</option>
@@ -38,6 +43,8 @@
                                     <option {% if engine == request_value.engine %} selected {% endif %}> {{ engine }} </option>
                                     {% endfor  %}
                                 </select>
+                            </div>
+                            <div class="form-group col-md-3"></div>
                                 <label for="cf-1">Transmission</label>
                                 <select class="form-control" name="transmission" id="exampleFormControlSelect1">
                                     <option transmission disabled selected>Transmission</option>
@@ -45,15 +52,12 @@
                                     <option {% if transmission == request_value.transmission %} selected {% endif %}> {{ transmission }} </option>
                                     {% endfor  %}
                                 </select>
-                            
-
-                                
-                            </div>
+                            </div>                            
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
-                                <input type="submit" value="Search" class="btn btn-primary">
-                                
+                                <input type="submit" value="Search" class="btn btn-primary">                                
+                                <input type="reset" value="Reset" class="btn btn-primary">                                
                             </div>
                         </div>
                     </form>
