@@ -1,65 +1,66 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-{% include "partials/_header_internal.html" %}
 <div class="site-section pt-0 pb-0 bg-light">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <form class="trip-form" action="{% url 'search' %}">
-                    <div class="row align-items-center mb-4">
-                        <div class="col-md-6">
-                            <h3 class="m-0">Begin your trip here</h3>
+                <div class="trip-form-wrapper">
+                    <form class="trip-form" action="{% url 'search' %}">
+                        <div class="row align-items-center mb-4">
+                            <div class="col-md-6">
+                                <h3 class="m-0">Begin your trip here</h3>
+                            </div>
+                            <div class="col-md-6 text-md-right">
+                                <span class="text-primary">32</span> <span>cars available</span></span>
+                            </div>
                         </div>
-                        <div class="col-md-6 text-md-right">
-                            <span class="text-primary">32</span> <span>cars available</span></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-md-3">
-                            <label for="cf-1">Vendor</label>
-                            <select class="form-control" name="vendor" id="exampleFormControlSelect1">
-                                {% for vendor in vendor_list %}
-                                <option placeholder="{{ car.vendor }}">{{ vendor }}</option>
-                                {% endfor  %}
+                        <div class="row">
+                            <div class="form-group col-md-3">
+                                <label for="cf-1">Vendor</label>
+                                <select class="form-control" name="vendor" id="exampleFormControlSelect1">
+                                    {% for vendor in vendor_list %}
+                                    <option placeholder="{{ car.vendor }}">{{ vendor }}</option>
+                                    {% endfor  %}
 
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="cf-2">Model</label>
-                            <select class="form-control" name="model" id="exampleFormControlSelect1">
-                                {% for model in models_list %}
-                                <option placeholder="{{ car.model }}">{{ model }}</option>
-                                {% endfor  %}
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="cf-2">Model</label>
+                                <select class="form-control" name="model" id="exampleFormControlSelect1">
+                                    {% for model in models_list %}
+                                    <option placeholder="{{ car.model }}">{{ model }}</option>
+                                    {% endfor  %}
 
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="cf-3">Engine</label>
-                            <select class="form-control" name="engine" id="exampleFormControlSelect1">
-                                {% for engine in engine_list %}
-                                <option placeholder="{{ car.engine }}">{{ engine }}</option>
-                                {% endfor  %}
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="cf-3">Engine</label>
+                                <select class="form-control" name="engine" id="exampleFormControlSelect1">
+                                    {% for engine in engine_list %}
+                                    <option placeholder="{{ car.engine }}">{{ engine }}</option>
+                                    {% endfor  %}
 
-                            </select>
-                        </div>
-                        <div class="form-group col-md-3">
-                            <label for="cf-4">Transmission</label>
-                            <select class="form-control" name="transmission" id="exampleFormControlSelect1">
-                                {% for car in cars %}
-                                <option placeholder="{{ car.transmission }}">{{ car.transmission }}</option>
-                                {% endfor  %}
+                                </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                                <label for="cf-4">Transmission</label>
+                                <select class="form-control" name="transmission" id="exampleFormControlSelect1">
+                                    {% for transmission in transmission_list %}
+                                    <option placeholder="{{ car.transmission }}">{{ transmission }}</option>
+                                    {% endfor  %}
 
-                            </select>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <input type="submit" value="Search" class="btn btn-primary">
-                            
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="submit" value="Search" class="btn btn-primary">
+                                
+                            </div>
                         </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

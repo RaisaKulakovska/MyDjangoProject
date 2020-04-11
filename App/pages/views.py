@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from cars.models import CarsList
 from carmanager.models import CarManager
-from .cars_Info import vendor_list, models_list, engine_list
+from .cars_Info import vendor_list, models_list, engine_list, transmission_list
 
 
 def index(request):
@@ -54,11 +54,18 @@ def search(request):
         if engine:
             query = query.filter(engine__iexact=engine)
 
+    if "transmission" in request.GET:
+        transmission = request.GET["transmission"]
+        if transmission:
+            query = query.filter(transmission__iexact=transmission)
+
     context = {
         "vendor_list": vendor_list,
         "models_list": models_list,
         "engine_list": engine_list,
+        "transmission_list": transmission_list,
         "cars": query,
+
     }
 
     return render(request, 'pages/search.html', context)

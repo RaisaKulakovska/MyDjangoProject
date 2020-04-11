@@ -1,16 +1,23 @@
 vendor_list = [
     "Audi",
-    "BMW",
-    "Volvo"
+    "Toyota",
+    "Porshe"
 ]
 
 models_list = [
+    "A1",
     "A6",
-    "X3",
-    "CX60"
+    "Camry",
+    "Prius",
+    "911"
 ]
 
 engine_list = [
     "Diesel",
     "Benzin"
+]
+
+transmission_list = [
+    "automatic",
+    "mecanic"
 ]

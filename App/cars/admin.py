@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import CarsList
 
 class CarsListAdmin(admin.ModelAdmin):
-    list_display = ("id", "vendor", "model", "engine", "colors", "price", "rating", "carmanager_id", "fuel_count", "is_published")
+    list_display = ("id", "vendor", "model", "engine",'transmission', "colors", "price", "rating", "carmanager_id", "fuel_count", "is_published")
 
     list_display_links = ("id","vendor", "model" )
     list_editable = ("is_published",)
