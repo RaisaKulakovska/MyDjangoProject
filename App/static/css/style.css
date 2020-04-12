@@ -209,8 +209,7 @@ html {
     color: #364d59 !important;
     font-weight: 300;
     font-size: 1rem;
-    background-color: lightcoral;
-   }
+    }
     
   
   ::-moz-selection {
@@ -275,7 +274,7 @@ html {
       box-shadow: none !important; }
   
   .site-section {
-    padding: 2.5em 0; }
+    padding: 3em 0; }
     @media (min-width: 768px) {
       .site-section {
         padding: 5em 0; } }
@@ -1598,6 +1597,7 @@ html {
   .block-content .carlist{
     height: 400px;
   }
+  /* ------Register page-------- */
   .register-form{
     margin: 70px 0;
   }

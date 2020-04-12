@@ -13,8 +13,8 @@ models_list = [
 ]
 
 engine_list = [
-    "Diesel",
-    "Benzin"
+    "disel",
+    "benzin"
 ]
 
 transmission_list = [

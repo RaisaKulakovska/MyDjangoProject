@@ -3,12 +3,17 @@ from django.shortcuts import render
 from cars.models import CarsList
 from carmanager.models import CarManager
 from .cars_Info import vendor_list, models_list, engine_list, transmission_list
+from django.core.paginator import Paginator
 
 
 def index(request):
 
-    cars = CarsList.objects.all().filter(is_published=True)[:5]
+    cars = CarsList.objects.all().filter(is_published=True)
     query = CarsList.objects.order_by("vendor")
+
+    paginator = Paginator(cars, 3)
+    page = request.GET.get("page")
+    paged_cars = paginator.get_page(page)
 
     if "vendor" in request.GET:
         vendor = request.GET["vendor"]
@@ -31,7 +36,7 @@ def index(request):
             query = query.filter(transmission__iexact=transmission)
 
     context = {
-        'cars': cars,
+        'cars': paged_cars,
         "vendor_list": vendor_list,
         "models_list": models_list,
         "engine_list": engine_list,
@@ -50,7 +55,7 @@ def about(request):
     }
 
     data = {'title': "About Us"}
-    return render(request, 'pages/about.html', context)
+    return render(request, 'pages/about.html', context, data)
 
 
 def services(request):
@@ -64,6 +69,10 @@ def contact(request):
 
 def search(request):
     query = CarsList.objects.order_by("vendor")
+
+    paginator = Paginator(query, 3)
+    page = request.GET.get("page")
+    paged_searched_cars = paginator.get_page(page)
 
     if "vendor" in request.GET:
         vendor = request.GET["vendor"]
@@ -86,11 +95,11 @@ def search(request):
             query = query.filter(transmission__iexact=transmission)
 
     context = {
+        "search_cars": paged_searched_cars,
         "vendor_list": vendor_list,
         "models_list": models_list,
         "engine_list": engine_list,
-        "transmission_list": transmission_list,
-        "cars": query,
+        "transmission_list": transmission_list,        
         "request_value": request.GET
 
     }
