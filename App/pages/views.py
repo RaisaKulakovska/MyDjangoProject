@@ -36,6 +36,7 @@ def index(request):
             query = query.filter(transmission__iexact=transmission)
 
     context = {
+        "cars_all": cars,
         'cars': paged_cars,
         "vendor_list": vendor_list,
         "models_list": models_list,

@@ -433,10 +433,12 @@ h1, h2, h3, h4, h5,
 .site-navbar {
   margin-bottom: 0px;
   z-index: 1999;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   width: 100%;
-  padding: 1rem; }
+  padding: 1rem;
+  background-color: black;
+}
   @media (max-width: 991.98px) {
     .site-navbar {
       padding-top: 3rem;
@@ -1599,7 +1601,11 @@ h1, h2, h3, h4, h5,
   width: 80px;
   height: 90px;
 }
-/* ------register page-------- */
-.register-form{
-  margin: 70px 0;
-}
+  /* ------Register page-------- */
+  .register-form{
+    margin: 70px 0;
+  }
+  .trip-form-wrapper .trip-form{
+    position: initial;
+    margin-top: 40px;
+  }
