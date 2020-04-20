@@ -73,7 +73,7 @@ def search(request):
 
     paginator = Paginator(query, 3)
     page = request.GET.get("page")
-    paged_searched_cars = paginator.get_page(page)
+    paged_search_cars = paginator.get_page(page)
 
     if "vendor" in request.GET:
         vendor = request.GET["vendor"]
@@ -96,7 +96,8 @@ def search(request):
             query = query.filter(transmission__iexact=transmission)
 
     context = {
-        "search_cars": paged_searched_cars,
+        "search_cars": query,
+        "paged_search_cars": paged_search_cars,
         "vendor_list": vendor_list,
         "models_list": models_list,
         "engine_list": engine_list,

@@ -1,10 +1,8 @@
 {% extends 'base.html' %}
-
-{% block title %} | Register {% endblock %}
-
+{% block title %} Register {% endblock %}
 {% load static %}
-{% include "partials/_header_internal.html" %}
 {% block content %}
+
 <style type="text/css">
     body {
         color: #fff;
@@ -151,4 +149,5 @@
     <div class="text-center">Already have an account?<button type="button" class="btn btn-link" id='login'
             data-toggle="modal" data-target="#exampleModalCenter">Sign in</button></div>
 </div>
+
 {% endblock %}

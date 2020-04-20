@@ -272,7 +272,8 @@ h1, h2, h3, h4, h5,
     box-shadow: none !important; }
 
 .site-section {
-  padding: 2.5em 0; }
+  padding: 4em 0;
+ }
   @media (min-width: 768px) {
     .site-section {
       padding: 5em 0; } }
@@ -1592,7 +1593,10 @@ h1, h2, h3, h4, h5,
 
 .carlist{
   width: 100%;
-  height: 200px;
+  height: 250px;
+}
+.carlist-single{
+  height: 350px;
 }
 .owl-nav{
   display: none;
@@ -1601,11 +1605,18 @@ h1, h2, h3, h4, h5,
   width: 80px;
   height: 90px;
 }
-  /* ------Register page-------- */
-  .register-form{
-    margin: 70px 0;
-  }
-  .trip-form-wrapper .trip-form{
-    position: initial;
-    margin-top: 40px;
-  }
+/* ------Register page-------- */
+.register-form{
+  margin: 70px 0;
+}
+.trip-form{
+  position: initial;
+  margin-top: 30px;
+}
+.site-section-cars{
+  padding: 2em 0;
+}
+/* ------Dashboard-------- */
+.cont{
+  color: white!important;
+}

@@ -50,10 +50,11 @@ def login(request):
     else:
         return render(request, "accounts/login.html")
 
-
 def logout(request):
+    if request.method=="POST":
+        auth.logout(request)
+    messages.success(request, "See you later!")
     return redirect('index')
 
-
-def dashboard(request):
+def dashboard(request): 
     return render(request, "accounts/dashboard.html")
