@@ -1,7 +1,7 @@
 from django.db import models
 from datetime import datetime
 
-class Contact(models.Model):
+class Contacts(models.Model):
     car = models.CharField(max_length=200)
     car_id = models.IntegerField()
     name = models.CharField(max_length=200)
@@ -11,5 +11,6 @@ class Contact(models.Model):
     contact_date = models.DateTimeField(default=datetime.now, blank=True)
     user_id = models.IntegerField(blank=True)
 
+    
     def __str__(self):
         return self.name
