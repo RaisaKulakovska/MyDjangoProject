@@ -1,6 +1,6 @@
 FROM django:onbuild
 
-COPY . /usr/src/app
+COPY App/. /usr/src/app
 
 RUN pip install -r requirement.txt
 EXPOSE 8000
