@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Contacts
+from django.core.mail import send_mail
 
 
 def contact(request):
@@ -12,6 +13,7 @@ def contact(request):
         name = request.POST['name']
         phone = request.POST['phone']
         email = request.POST['email']
+        manager_email = request.POST['manager_email']
         message = request.POST['text']
         if request.user.is_authenticated:
             user_id = request.user.id
@@ -23,5 +25,12 @@ def contact(request):
         contact = Contacts(car=car_name, car_id=car_id, name=name, email=email,
                            phone=phone, message=message, user_id=user_id)
         contact.save()
+        send_mail(
+            'New order',
+            'Rent order. '+ name + ' ' + car_name + ' ' + phone+ ' ' + email + ' ' + message, 
+            'raisakulakovska1@gmail.com',
+            [manager_email],
+            fail_silently=False,
+        )
         messages.success(request, "Your request submited")
         return redirect("/carlist/"+car_id)

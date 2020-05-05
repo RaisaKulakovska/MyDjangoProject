@@ -4,12 +4,16 @@ from cars.models import CarsList
 from carmanager.models import CarManager
 from .cars_Info import vendor_list, models_list, engine_list, transmission_list
 from django.core.paginator import Paginator
+from contacts.models import Contacts
 
 
 def index(request):
-
     cars = CarsList.objects.all().filter(is_published=True)
     query = CarsList.objects.order_by("vendor")
+    random_car = CarsList.objects.order_by('?')[0]
+      
+    orders = Contacts.objects.all().filter(is_published=True)
+    random_orders = Contacts.objects.filter(is_published=True).order_by('?')[:3]  
 
     paginator = Paginator(cars, 3)
     page = request.GET.get("page")
@@ -43,7 +47,9 @@ def index(request):
         "engine_list": engine_list,
         "transmission_list": transmission_list,
         "search_cars": query,
-        "request_value": request.GET
+        "request_value": request.GET,
+        "rnd_car": random_car,
+        "random_orders": random_orders
     }
     return render(request, 'pages/index.html', context)
 

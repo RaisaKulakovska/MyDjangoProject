@@ -19,3 +19,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# from django.apps import AppConfig
+
+# class FirstConfig(AppConfig):
+#     name = 'first'

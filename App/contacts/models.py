@@ -10,6 +10,9 @@ class Contacts(models.Model):
     message = models.TextField(blank=True)
     contact_date = models.DateTimeField(default=datetime.now, blank=True)
     user_id = models.IntegerField(blank=True)
+    is_published = models.BooleanField(default=True)
+    photo = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
+    description = models.TextField(blank=True)
 
     
     def __str__(self):

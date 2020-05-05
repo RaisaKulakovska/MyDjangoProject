@@ -7,9 +7,9 @@
 <div class="content">
     <div class="site-section">
         <div class="container">
-            <div class="row blog-content">                
-                    <div class="col-md-4">
-                        
+            <div class="row blog-content">   
+              <!-- {% include 'partials/_alerts.html' %}              -->
+                    <div class="col-md-4">                        
                         <form action="{% url 'contact' %}" method="POST">
                           {% csrf_token %}
                           {% if user.is_authenticated %}
@@ -20,6 +20,7 @@
                           <input type="hidden" name="car_id" value="{{ car.id }}" />
                           <input type="hidden" name="car_name" value="{{ car.model}}" />
                           <input type="hidden" name="car_manager" value="{{ car.carmanager }}" />
+                          <input type="hidden" name="manager_email" value="{{ car.carmanager.email }}" />
                           <div class="form-group">
                               <label>Name</label>
                               <input type="text" name="name" class="form-control" {% if user.is_authenticated %}
