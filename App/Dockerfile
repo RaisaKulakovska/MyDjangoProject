@@ -1,5 +1,6 @@
-FROM django:onbuild
+FROM python:3.6
 
+WORKDIR /usr/src/app
 COPY App/. /usr/src/app
 
 RUN pip install -r requirement.txt
