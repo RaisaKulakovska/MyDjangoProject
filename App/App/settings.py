@@ -82,16 +82,25 @@ WSGI_APPLICATION = 'App.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': "RentCar",
+#         'USER':'postgres',
+#         'PASSWORD': 'mysecretpassword',
+#         'HOST': '137.135.111.98'
+#     }
+# }
+# -------------for Azure-------------
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
-        'NAME': "RentCar",
+        'NAME': "postgres",
         'USER':'postgres',
         'PASSWORD': 'mysecretpassword',
         'HOST': '137.135.111.98'
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
