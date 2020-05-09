@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .models import Contacts
 from django.core.mail import send_mail
+from django.contrib import messages, auth
+from django.contrib.auth.models import User
 
 
 def contact(request):
@@ -20,8 +22,8 @@ def contact(request):
             has_contacted = Contacts.objects.all().filter(
                 car_id=car_id, user_id=user_id)
             if has_contacted:
-                messages.error(request, "Car alredy rented")
-                return redirect("/carlist/"+car_id)
+                messages.error(request, "This car alredy rented")
+                return redirect("/carlist")
         contact = Contacts(car=car_name, car_id=car_id, name=name, email=email,
                            phone=phone, message=message, user_id=user_id)
         contact.save()

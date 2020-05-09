@@ -56,5 +56,6 @@ def logout(request):
     messages.success(request, "See you later!")
     return redirect('index')
 
-def dashboard(request): 
+def dashboard(request):    
+        
     return render(request, "accounts/dashboard.html")
