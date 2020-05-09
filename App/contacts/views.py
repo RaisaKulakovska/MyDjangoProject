@@ -35,4 +35,4 @@ def contact(request):
             fail_silently=False,
         )
         messages.success(request, "Your request submited")
-        return redirect("/carlist/"+car_id)
+        return redirect('accounts:dashboard')

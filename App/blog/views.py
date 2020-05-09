@@ -4,18 +4,17 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 from cars.models import CarsList
 from .models import Blog
+from contacts.models import Contacts
 
 
 def blog(request):
     # blog_list = carlist
-    blog_list = CarsList.objects.all().filter(is_published=True)
-
-    paginator = Paginator(blog_list, 6)
-    page = request.GET.get("page")
-    paged_bloglist = paginator.get_page(page)
+    blog_list = CarsList.objects.all()
+    order = Contacts.objects.distinct("car_id")   
 
     context = {
-        "blog_list": paged_bloglist,
+        "order": order,
+        "blog_list": blog_list,
         "title": "Blog-articles",
         "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }    

@@ -1,7 +1,10 @@
 from django.shortcuts import render, redirect
 from django.contrib import messages, auth
 from django.contrib.auth.models import User
+from cars.models import CarsList
+from contacts.models import Contacts
 
+ 
 
 def register(request):
     if request.method == "POST":
@@ -56,6 +59,17 @@ def logout(request):
     messages.success(request, "See you later!")
     return redirect('index')
 
-def dashboard(request):    
-        
-    return render(request, "accounts/dashboard.html")
+def dashboard(request):  
+    if request.user.is_authenticated:
+        user_id = request.user.id
+        orders_all = Contacts.objects.all()
+        order = Contacts.objects.all().filter(user_id=user_id)         
+        dash_cars = CarsList.objects.all()
+        # print(order)
+        context= {
+            "orders_all": orders_all,
+            "order": order,
+            "dash_cars": dash_cars
+        }
+      
+    return render(request, "accounts/dashboard.html", context)

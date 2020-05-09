@@ -18,7 +18,8 @@
                           <input type="hidden" name="user_id" value="0" />
                           {% endif %}
                           <input type="hidden" name="car_id" value="{{ car.id }}" />
-                          <input type="hidden" name="car_name" value="{{ car.model}}" />
+                          <input type="hidden" name="car_name" value="{{ car.vendor}}{{ car.model}}" />
+
                           <input type="hidden" name="car_manager" value="{{ car.carmanager }}" />
                           <input type="hidden" name="manager_email" value="{{ car.carmanager.email }}" />
                           <div class="form-group">
