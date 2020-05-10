@@ -25,7 +25,7 @@ def contact(request):
                 messages.error(request, "This car alredy rented")
                 return redirect("/carlist")
         contact = Contacts(car=car_name, car_id=car_id, name=name, email=email,
-                           phone=phone, message=message, user_id=user_id)
+                           phone=phone, message=message, user_id=user_id, car_manager=car_manager)
         contact.save()
         send_mail(
             'New order',

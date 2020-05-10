@@ -23,7 +23,7 @@
             <div class="col">
                 <div class="row">
                     <div class="col mb-3">
-                        <div class="card">
+                        <div class="card ">
                             <div class="card-body">
                                 <div class="e-profile">
                                     <div class="row">
@@ -54,28 +54,35 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
+                        <div class="card m-2">
                             <div class="col-12">
-                                <h3>Your rented cars are: </h3>
+                                <h5>Your rented cars are: </h5>
                             </div> 
                         </div>
-
-                        <div class="card">
-                            <div class="col-4 mx-auto " style="width: 140px;">
-                                <div class="d-flex justify-content-center align-items-center rounded"
-                                    style="height: 140px; background-color: rgb(233, 236, 239);">
-                                    <img src="{{ user.photo.url }}" alt="{{car.model}}" class="carlist car-carlist mx-auto d-block">
+                        {% for o in order%}
+                        {% for rented_car in dash_cars%}
+                        {% if rented_car.id == o.car_id %}
+                        
+                        <div class="card col-12 m-2">
+                            <div class="row">
+                                <div class="col-4 mx-left " style="width: 140px; height: 140px;">
+                                    <div class="d-flex justify-content-center align-items-center rounded"
+                                        style="height: 140px; background-color: rgb(233, 236, 239);">
+                                        <img src="{{ rented_car.photo_main.url }}" style="width: 180px; height: 130px;" alt="{{rented_car.vendor}} {{rented_car.model}}" class="align-items-center rounded ">
+                                    </div>
+                                </div>
+                                <div class="col-8 ">                                
+                                        <h6>Car: {{rented_car.vendor}} {{rented_car.model}} </h6>
+                                        <h6>Client: {{o.name}} </h6>
+                                        <h6>Rented: {{o.contact_date}}</h6>
+                                        <h6>Car manager: {{rented_car.carmanager}}</h6>
+                                    <br>                                
                                 </div>
                             </div>
-                            <div class="col-6">
-                                {% for o in order%}
-                                    <span>{{o.car}}</span>
-                                    <span>{{o.name}}</span>
-                                    <span>{{o.contact_date}}</span>
-                                {% endfor %}
-                            </div>
                         </div>
-                            
+                        {% endif %}
+                        {% endfor %} 
+                        {% endfor %}   
                             
                         
                     </div>
