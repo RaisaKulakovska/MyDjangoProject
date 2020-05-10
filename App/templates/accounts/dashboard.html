@@ -71,12 +71,17 @@
                                         <img src="{{ rented_car.photo_main.url }}" style="width: 180px; height: 130px;" alt="{{rented_car.vendor}} {{rented_car.model}}" class="align-items-center rounded ">
                                     </div>
                                 </div>
-                                <div class="col-8 ">                                
+                                <div class="col-6 ">                                
                                         <h6>Car: {{rented_car.vendor}} {{rented_car.model}} </h6>
-                                        <h6>Client: {{o.name}} </h6>
+                                        <h6>Client: {{o.name}}</h6>
                                         <h6>Rented: {{o.contact_date}}</h6>
                                         <h6>Car manager: {{rented_car.carmanager}}</h6>
                                     <br>                                
+                                </div>
+                                <div class="col-2 align-self-center">
+                                    <div class=" row justify-content-center m-2 action">
+                                        <a href="{% url 'comment' %}" class="btn btn-primary p-1 px-2 ">Leave comment</a>
+                                      </div>
                                 </div>
                             </div>
                         </div>

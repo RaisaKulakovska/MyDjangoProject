@@ -12,7 +12,7 @@ def contact(request):
         car_name = request.POST['car_name']
         car_manager = request.POST['car_manager']
         car_id = request.POST['car_id']
-        name = request.POST['name']
+        name = request.POST['name']        
         phone = request.POST['phone']
         email = request.POST['email']
         manager_email = request.POST['manager_email']

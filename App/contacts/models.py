@@ -4,7 +4,7 @@ from datetime import datetime
 class Contacts(models.Model):
     car = models.CharField(max_length=200)
     car_id = models.IntegerField()
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200)    
     email = models.CharField(max_length=200)
     phone = models.CharField(max_length=100)
     message = models.TextField(blank=True)
