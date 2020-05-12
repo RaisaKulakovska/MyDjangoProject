@@ -4,6 +4,7 @@ from carmanager.models import CarManager
 from .cars_Info import vendor_list, models_list, engine_list, transmission_list
 from django.core.paginator import Paginator
 from contacts.models import Contacts
+from django.contrib.auth.models import User
 
 
 def index(request):
@@ -58,10 +59,9 @@ def about(request):
 
     context = {
         'managers': managers,
-    }
-
-    data = {'title': "About Us"}
-    return render(request, 'pages/about.html', context, data)
+        'title': "About Us"
+    }    
+    return render(request, 'pages/about.html', context)
 
 
 def services(request):

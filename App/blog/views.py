@@ -23,20 +23,29 @@ def blog(request):
     }    
     return render(request, 'blog/blog.html', context)
 
-def comment(request):
-    # if request.method == "POST":
-    #     user_id = request.POST['user_id']
+def comment(request):   
+
     return render(request, 'blog/comment.html')
 
 
-# def single(request):
-#     blog_car = get_object_or_404(CarsList)
-#     blog_manager = get_object_or_404(CarManager, name=blog_car.carmanager)
-#     context = {
-#         "blog_car": blog_car,
-#         'title': "Single Blog Posts Title",
-#         "blog_manager": blog_manager
-#     }
+def single(request):
+    # blog_car = 
+    # blog_manager = get_object_or_404(CarManager, name=blog_car.carmanager)
+
+    if request.method == "POST":
+        user_id = request.POST['user_id']
+        car_id = request.POST['car_id']
+        comment = request.POST['comment']
+        First_name = request.POST['First_name']
+        Last_name = request.POST['Last_name']
+  
+    context = {        
+        'user_id': user_id,
+        'car_id': car_id,
+        'comment': comment,
+        'First_name':First_name,
+        'Last_name':Last_name
+    }
     
-#     return render(request, 'blog/single.html', context)
+    return render(request, 'blog/single.html', context)
 

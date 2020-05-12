@@ -26,7 +26,7 @@ SECRET_KEY = '44@mfvc8zjk8ems%bku%s)$8o0p0xa+!s7n(w-!o4nuwf0kgo#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','localhost']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -86,9 +86,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
         'NAME': "RentCar",
-        'USER':'master1',
-        'PASSWORD': '1',
-        'HOST': 'localhost'
+        'USER':'master',
+        'PASSWORD': 'master',
+        'HOST': '104.211.0.221'
     }
 }
 # -------------for Azure-------------
