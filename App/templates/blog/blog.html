@@ -5,23 +5,19 @@
 <div class="site-section bg-light">
     <div class="container"> 
       <div class="row">
-        {% if blog_list  %}
-        {% for blog_car in blog_list %}
-         {% for o in order %}
-         {% if blog_car.id == o.car_id %}
+        {% if blog_list_new  %}
+        {% for blog_part in blog_list_new %}         
           <div class="col-lg-4 col-md-6 mb-4">
             <div class="post-entry-1 h-100">
-              <a href="#"><img src="{{ blog_car.photo_main.url }}" alt="{{blog_car.model}}" class="carlist car-carlist mx-auto d-block"></a>
+              <a href="#"><img src="{{ blog_car.photo_main.url }}" alt="author_id:{{author_id}}" class="carlist car-carlist mx-auto d-block"></a>
               <div class="post-entry-1-contents">
-                <h2><a href="#">{{blog_car.vendor}}</a></h2>
-                <span class="meta d-inline-block mb-3">Date <span class="mx-2">by</span>Admin</span>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eos soluta, dolore harum molestias consectetur.</p>
+                <h2><a href="#">{{blog_part.title}}</a></h2>
+                <span class="meta d-inline-block mb-3">{{blog_part.publish_date}} <span class="mx-2">by</span>{{blog_part.author_id}}</span>
+                <p>{{blog_part.article}}</p>
               </div>
             </div>
-          </div>
-          {% endif %}
-          {% endfor %}
-        {% endfor %}
+          </div>          
+        {% endfor %}        
         {% else %}
         <div class="col">
             No Cars Avialable

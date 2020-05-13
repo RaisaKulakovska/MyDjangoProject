@@ -1631,3 +1631,15 @@ h1, h2, h3, h4, h5,
   width: 120px;
   height: 60px;
 }
+#testim_photo{
+  height: 200px;
+  width: 200px;  
+}
+.testim_text{
+  height: 90px;
+  overflow: hidden;
+}
+.manager_descr{
+  height: 80px;
+  overflow: hidden;
+}

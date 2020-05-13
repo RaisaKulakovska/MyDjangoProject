@@ -26,7 +26,8 @@ SECRET_KEY = '44@mfvc8zjk8ems%bku%s)$8o0p0xa+!s7n(w-!o4nuwf0kgo#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS =  ["*"]
+# ALLOWED_HOSTS =  ['127.0.0.1','localhost']  
 
 
 # Application definition
@@ -82,15 +83,27 @@ WSGI_APPLICATION = 'App.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql', 
         'NAME': "RentCar",
-        'USER':'master',
-        'PASSWORD': 'master',
-        'HOST': '104.211.0.221'
+        'USER':'master1',
+        'PASSWORD': '1',
+        'HOST': 'localhost'
     }
 }
+# -------------for docker-------------
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql', 
+#         'NAME': "RentCar",
+#         'USER':'master',
+#         'PASSWORD': 'master',
+#         'HOST': '104.211.0.221'
+#     }
+# }
+
 # -------------for Azure-------------
 # DATABASES = {
 #     'default': {

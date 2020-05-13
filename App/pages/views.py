@@ -13,7 +13,7 @@ def index(request):
     random_car = CarsList.objects.order_by('?')[0]
       
     orders = Contacts.objects.all().filter(is_published=True)
-    random_orders = Contacts.objects.filter(is_published=True).order_by('?')[:3]  
+    displayed_orders = Contacts.objects.filter(is_published=True).order_by('?')[:3]  
 
     paginator = Paginator(cars, 3)
     page = request.GET.get("page")
@@ -40,6 +40,7 @@ def index(request):
             query = query.filter(transmission__iexact=transmission)
 
     context = {
+        "orders": orders,
         "cars_all": cars,
         'cars': paged_cars,
         "vendor_list": vendor_list,
@@ -49,7 +50,7 @@ def index(request):
         "search_cars": query,
         "request_value": request.GET,
         "rnd_car": random_car,
-        "random_orders": random_orders
+        "displayed_orders": displayed_orders
     }
     return render(request, 'pages/index.html', context)
 

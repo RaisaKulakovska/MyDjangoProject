@@ -12,7 +12,7 @@ class Contacts(models.Model):
     user_id = models.IntegerField(blank=True)
     is_published = models.BooleanField(default=True)
     photo = models.ImageField(upload_to='photos/%Y/%m/%d', blank=True)
-    description = models.TextField(blank=True)
+    testimonial = models.TextField(blank=True)
 
     
     def __str__(self):
