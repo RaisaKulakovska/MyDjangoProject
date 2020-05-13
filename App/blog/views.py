@@ -10,29 +10,21 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 
 
-def blog(request):
-    # blog_list = carlist
-    blog_list = CarsList.objects.all()   
-    order = Contacts.objects.distinct("car_id")
+def blog(request):    
 
-    blog_list_new = Blog.objects.all()
-    order_all = Contacts.objects.all()
-    manager_all = CarManager.objects.all() 
+    blog_list_new = Blog.objects.all().filter(is_published=True)    
+    manager_all = CarManager.objects.all().filter(is_published=True) 
     
-    context = {
-        "order": order,
-        "blog_list": blog_list,
+    context = {        
         "blog_list_new": blog_list_new,
-        'order_all':order_all,
         'manager_all':manager_all,
         "title": "Blog-articles",
         "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
     }    
     return render(request, 'blog/blog.html', context)
 
-def comment(request):   
-
-    return render(request, 'blog/comment.html')
+def testimonials(request): 
+    return render(request, 'blog/testimonials.html')
 
 
 def single(request):
