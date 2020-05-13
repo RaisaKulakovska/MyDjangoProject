@@ -1,7 +1,9 @@
 from django.db import models
 from datetime import datetime
+from carmanager.models import CarManager
 
 class Blog(models.Model):
+    blog_manager = models.ForeignKey(CarManager, on_delete=models.DO_NOTHING)
     author_id = models.IntegerField(default=True)    
     is_published = models.BooleanField(default=True)
     title = models.CharField(max_length=500, default=True)

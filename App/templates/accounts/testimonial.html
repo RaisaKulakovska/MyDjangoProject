@@ -13,13 +13,9 @@
     </div>
       <div class="row">
         <div class="col-12" >
-          <form action="{% url 'single' %}" method="POST">
+          <form action="#" method="POST">
             {% csrf_token %}            
-            <input type="hidden" name="user_id" value="{{ user.id }}" />   
-            <input type="hidden" name="car_id" value="{{ car.id }}" />
-            <input type="hidden" name="car_name" value="{{ car.vendor}}{{ car.model}}" />
-            <input type="hidden" name="car_manager" value="{{ car.carmanager }}" />
-            <input type="hidden" name="manager_email" value="{{ car.carmanager.email }}" />
+            <input type="hidden" name="user_id" value="{{ user.id }}" />              
             <div class="form-group row">
               <div class="col-md-6 mb-4 mb-lg-0">
                 <input type="text" class="form-control" name="First_name" placeholder="First name" value="{{user.first_name}}">

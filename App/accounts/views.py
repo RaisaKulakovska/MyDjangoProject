@@ -73,3 +73,6 @@ def dashboard(request):
         }
       
     return render(request, "accounts/dashboard.html", context)
+
+def testimonial(request): 
+    return render(request, 'accounts/testimonial.html')

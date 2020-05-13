@@ -10,40 +10,30 @@ from django.contrib import messages, auth
 from django.contrib.auth.models import User
 
 
-def blog(request):    
+def blog(request):     
+    blog_list = Blog.objects.all().filter(is_published=True)  
+    manager_all = CarManager.objects.all().filter(is_published=True)
 
-    blog_list_new = Blog.objects.all().filter(is_published=True)    
-    manager_all = CarManager.objects.all().filter(is_published=True) 
-    
+    paginator = Paginator(blog_list, 3)
+    page = request.GET.get("page")
+    paged_bloglist = paginator.get_page(page)
+
     context = {        
-        "blog_list_new": blog_list_new,
+        "blog_list": blog_list,
         'manager_all':manager_all,
         "title": "Blog-articles",
-        "subtitle": "Lorem ipsum dolor sit amet consectetur adipisicing elit."
-    }    
-    return render(request, 'blog/blog.html', context)
+        "subtitle": "Blog lorem ipsum dolor sit amet consectetur adipisicing elit."
+    } 
+    
+    return render(request, 'blog/single.html', context)   
 
-def testimonials(request): 
-    return render(request, 'blog/testimonials.html')
-
-
-def single(request):
-    # blog_car = 
-    # blog_manager = get_object_or_404(CarManager, name=blog_car.carmanager)
-
-    if request.method == "POST":
-        user_id = request.POST['user_id']
-        car_id = request.POST['car_id']
-        comment = request.POST['comment']
-        First_name = request.POST['First_name']
-        Last_name = request.POST['Last_name']
-  
+def single(request, blog_list_id):
+    blog_item = get_object_or_404(Blog, pk=blog_list_id)
+    blog_manager = get_object_or_404(CarManager, name=blog_item.blog_manager)
+    
     context = {        
-        'user_id': user_id,
-        'car_id': car_id,
-        'comment': comment,
-        'First_name':First_name,
-        'Last_name':Last_name
+        "blog_item": blog_item,
+        'blog_manager':blog_manager,
     }
     
     return render(request, 'blog/single.html', context)
